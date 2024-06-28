@@ -5,9 +5,9 @@
 
 Projeyi çalıştırmak için:
 
-Repoyu klonlayınız.
+ - Repoyu klonlayınız.
 
-Emülatörü bağlayınız.
+- Emülatörü bağlayınız.
 ```bash
 # npm
 npm install
@@ -15,7 +15,12 @@ npm run android
 ```
 ## APK
 
- Release Apk Path'i:   `/android/app/release/app-release.apk`
+- Release Apk Path'i:   `/android/app/release/app-release.apk`
+ 
+- Release Apk Çalıştırma Komutu: 
+ ```bash
+npx react-native run-android --mode release 
+```
 
 ## Ekran Görüntüleri
 ![1](https://github.com/emretutay/RickAndMorty/assets/87774559/d19c8cf8-72c4-4c1a-a933-7b2c5d1278e8)
