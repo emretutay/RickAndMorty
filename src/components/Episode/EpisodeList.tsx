@@ -34,7 +34,7 @@ const EpisodeList: React.FC = () => {
         return;
 
       }
-      console.log(data)
+      
       setEpisodes(data.results);
       setTotalPages(data.info.pages);
 

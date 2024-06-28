@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, FlatList, TouchableOpacity, Alert, StyleSheet } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeFavoriteCharacter } from './slices/favoriteCharactersSlice';
-import { RootState } from './store';
+import { loadFavoriteCharacters, removeFavoriteCharacter } from './slices/favoriteCharactersSlice';
+import { AppDispatch, RootState } from './store';
 import { Character } from '../types/types';
 
 const FavoriteCharactersScreen = () => {
   const favorites = useSelector((state:RootState) => state.favoriteCharacters.characters);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
+  useEffect(() => {
+    dispatch(loadFavoriteCharacters());
+  }, [dispatch]);
 
   const confirmDelete = (character:Character) => {
     Alert.alert(
       "Remove from favorites",
-      `$ Do you want to remove the character named ${character.name} from your favorites?`,
+      `Do you want to remove the character named ${character.name} from your favorites?`,
       [
         { text: "No", style: "cancel" },
         { 
