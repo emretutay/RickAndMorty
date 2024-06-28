@@ -134,25 +134,7 @@ const EpisodeDetails: React.FC = () => {
         keyExtractor={(item) => item.id.toString()}
       />
       <CharacterSearchBar onSearch={handleCharacterSearch} />
-      {/* 
-      <View style={styles.paginationContainer}>
-            <TouchableOpacity 
-              style={[styles.paginationButton, page === 1 && styles.disabledButton]} 
-              onPress={handlePrevPage}
-              disabled={page === 1}
-            >
-              <Text style={styles.paginationButtonText}>Previous</Text>
-            </TouchableOpacity>
-            <Text style={styles.paginationText}>Page {page} of {totalPages}</Text>
-            <TouchableOpacity 
-              style={[styles.paginationButton, page === totalPages && styles.disabledButton]} 
-              onPress={handleNextPage}
-              disabled={page === totalPages}
-            >
-              <Text style={styles.paginationButtonText}>Next</Text>
-            </TouchableOpacity>
-          </View>
-      */}
+     
           <Pagination
         currentPage={page}
         totalPages={totalPages}
